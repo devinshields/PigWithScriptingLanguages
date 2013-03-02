@@ -3,7 +3,7 @@
   Author  : Devin Shields
   Date    : 2013-03-01
   Purpose : demonstrate of a python script running on data from the standard input
-             demonstrate python with pig streaming
+            demonstrate python with pig streaming
 '''
 
 import sys

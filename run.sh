@@ -18,8 +18,8 @@ mkdir  $RESULTS
 
 # demonstrate pure line-by-line mapping
 # MAP TEST, PRE-HADOOP: test R streaming & python streaming via bash pipes
-cat $SAMPLE | ./mapper.py
-cat $SAMPLE | ./mapper.R
+#cat $SAMPLE | ./mapper.py
+#cat $SAMPLE | ./mapper.R
 
 # MAP TEST, LOCAL DEV:    use pig local streaming to feed data into R, include the pig .jar
 java -Xmx4096m -cp ./jars/pig-0.10.0.jar org.apache.pig.Main -param SAMPLE=$SAMPLE -param RESULTS=$RESULTS -x local streaming.pig 
