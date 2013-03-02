@@ -4,16 +4,16 @@
    Purpose : demonstrate pig streaming with R and python
 */
 
+
 /* read the data from HDFS */
-A = load './z_data.txt';
+A = load '$SAMPLE';
+
 
 /* stream the data through */
 R  = stream A through `mapper.R`;
 Py = stream A through `mapper.py`;
 
-/* store the results to disk */
-rmf z_results_from_R_streaming
-STORE R INTO 'z_results_from_R_streaming' USING PigStorage();
 
-rmf z_results_from_python_streaming
-STORE Py INTO 'z_results_from_python_streaming' USING PigStorage();
+/* store the results to disk */
+STORE R INTO '$RESULTS/R_Streaming' USING PigStorage();
+STORE Py INTO '$RESULTS/Python_Streaming' USING PigStorage();
