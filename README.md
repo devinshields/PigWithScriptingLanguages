@@ -157,4 +157,3 @@ job_local_0002
 
 2013-03-01 20:56:07,135 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - Success!
 admins-MacBook-Pro:06_withHadoopPig admin$ i
-
