@@ -9,6 +9,7 @@
 from org.apache.pig.scripting import *
 from ServerLogEntry import ServerLogEntry
 
+
 @outputSchema("model_results: chararray")
 def model_reducer(grp):
   '''

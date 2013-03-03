@@ -13,6 +13,8 @@ mkdir  $RESULTS
 # SIMULATE SAMPLE DATA: generate some randomized structured data
 ./ServerLogEntry.py > $SAMPLE
 
-
-# modeling reducer with pig python
+# LOCAL DEV:
 java -Xmx4096m -cp ./lib/jars/pig-0.10.0.jar:./lib/jars/jython-2.5.0.jar org.apache.pig.Main -x local ./pig.py
+
+# CLUSTER DEV: 
+#pig < pig.py

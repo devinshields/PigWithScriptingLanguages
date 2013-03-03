@@ -1,6 +1,9 @@
 #!/usr/bin/python
 
-
+try:
+  from org.apache.pig.scripting import *
+except:
+  pass
 
 class ServerLogEntry:
   ''' class to encapsule data from webserver logs.
