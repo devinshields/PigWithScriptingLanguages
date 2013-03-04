@@ -1,10 +1,5 @@
 #!/usr/bin/python
 
-try:
-  from org.apache.pig.scripting import *
-except:
-  pass
-
 class ServerLogEntry:
   ''' class to encapsule data from webserver logs.
       one object equates to one line of a text log.
@@ -15,6 +10,10 @@ class ServerLogEntry:
     self.cookie_uid  = int(t[0])
     self.webpage_uid = int(t[1])
     self.utc_time    = int(t[2])
+  @staticmethod
+  def header_line():
+    row = ['cookie_uid', 'webpage_uid', 'utc_time']
+    return '\t'.join(row)
   @property
   def row(self):
     return (self.cookie_uid, self.webpage_uid, self.utc_time)
