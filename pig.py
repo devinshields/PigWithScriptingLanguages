@@ -8,7 +8,7 @@
 
 from org.apache.pig.scripting import *
 from ServerLogEntry import ServerLogEntry
-import subprocess
+#import subprocess
 
 @outputSchema("model_results: chararray")
 def group_to_text_matrix(grp):

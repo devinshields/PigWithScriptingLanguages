@@ -14,10 +14,18 @@ mkdir  $RESULTS
 ./ServerLogEntry.py > $SAMPLE
 
 # LOCAL DEV: map only
-java -Xmx4096m -cp ./lib/jars/pig-0.10.0.jar:./lib/jars/jython-2.5.0.jar org.apache.pig.Main -x local ./simple_map.pig
+#java -Xmx4096m -cp ./lib/jars/pig-0.10.0.jar:./lib/jars/jython-2.5.0.jar org.apache.pig.Main -x local ./simple_map.pig
 
 # LOCAL DEV: reduce using python UDFs to organize data
 #java -Xmx4096m -cp ./lib/jars/pig-0.10.0.jar:./lib/jars/jython-2.5.0.jar org.apache.pig.Main -x local ./pig.py
+
+# LOCAL DEV: pass pig groups as JSON into R streaming
+java -Xmx4096m -cp ./lib/jars/pig-0.10.0.jar org.apache.pig.Main -x local ./store_group_as_json.pig
+cat ./data/groups_as_json/* > data/groups.json
+java -Xmx4096m -cp ./lib/jars/pig-0.10.0.jar org.apache.pig.Main -x local ./stream_group_as_json.pig
+
+
+
 
 # CLUSTER DEV: 
 #pig < pig.py
