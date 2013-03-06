@@ -22,10 +22,10 @@ tmp.install.packages <- function(pack, dependencies=TRUE, ...) {
 }
 
 # try to install a temp package
-tmp.install.packages("hash")
+tmp.install.packages("RCurl")
 
 # load the package
-require(hash)
+require(RCurl)
 
 # prove that it worked
-example(hash)
+example(RCurl)
